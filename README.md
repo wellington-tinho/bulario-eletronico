@@ -51,4 +51,4 @@ Regime: CLT
 
 Para se candidatar, basta acessar a url de acordo com o nível e realizar o teste para a vaga:
 
-- [Desenvolvedor Frontend Júnior](teste-frontend.md)
+- [Desenvolvedor Frontend](teste-frontend.md)
