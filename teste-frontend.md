@@ -71,6 +71,7 @@ GET http://localhost:3000/data?_page=:number
 	]
 }
 ```
+### Dicionário de dados
 
 | Campo| Descrição | Tipo |
 |-|-|-| 
