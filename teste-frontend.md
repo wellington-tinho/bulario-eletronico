@@ -42,7 +42,7 @@ GET http://localhost:3000/data/:id
 GET http://localhost:3000/data?_page=:number
 ```
 
-**Exemplo da resposta:**
+### Exemplo da resposta:
 ```json
 {
 	"id": "9fd2789c-50f5-4743-857b-bbfa746ed631",
