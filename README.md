@@ -4,7 +4,7 @@
 
 Buscamos profissionais que sejam apaixonados por desenvolvimento, inovação e novas tecnologias, para integrar nosso time em projetos baseados em Laravel, Node.js, React e React Native.
 
-[Oportunidades Dotlib](README.md)
+[Oportunidades Dotlib](https://github.com/Dotlib-BR/oportunidades)
 
 ## Requisitos
 
