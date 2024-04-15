@@ -1,36 +1,31 @@
-[![](https://dotlib.com/theme/img/logos/logo.png)](http://www.dotlib.com)
+[![](https://dotlib.com/theme/img/logos/logo.png)](https://www.dotlib.com)
 
-# Descrição da vaga
+# Descrição da vaga de Desenvolvedor Frontend Jr.
 
-Buscamos profissionais que sejam apaixonados por desenvolvimento, inovação e novas tecnologias, para integrar nosso time em projetos baseados em Node.JS, Laravel, React.JS e React Native.
+Buscamos profissionais que sejam apaixonados por desenvolvimento, inovação e novas tecnologias, para integrar nosso time em projetos baseados em Laravel, Node.js, React e React Native.
+
+[Oportunidades Dotlib](README.md)
 
 ## Requisitos
 
-### **Obrigatórios:**
+### Obrigatórios:
 
-- Mínimo 1 ano de experiência em desenvolvimento de sites e sistemas em Laravel;
-- Consumo de APIs RESTful e GraphQl;
-- Controle de versões (GIT).
+- Experiência em desenvolvimento de sites em React
+- Consumo de APIs RESTful
+- SASS e Flexbox
+- API Contexts e Hooks
+- Controle de versões (GIT)
 
-### **Diferenciais:**
+### Bônus:
 
-- TDD;
-- Conhecimentos em Node.JS;
-- Conhecimentos em React Native ou Flutter;
-- Experiência em metodologias ágeis (Scrum/Kanban).
-
-## Benefícios
-
-- Salário compatível com o mercado;
-- Vale Refeição ou Vale Alimentação;
-- Plano de Saúde e Odontológico;
-- Equipe unida, divertida e apaixonada por hambúrgueres;
-- TECH DAY - Evento trimestral de palestras sobre tecnologia;
-- Friday's Talk - Bate papo discontraído sobre tecnologia, apresentação de POCs de estudos, etc;
-- Emendas em feriados nacionais.
+- Conhecimentos em Docker
+- Conhecimentos em Typescript
+- Conhecimentos em Node.js
+- Conhecimentos em testes automatizados com Cypress
+- Experiência em metodologias ágeis (Scrum/Kanban)
 
 ## Como se candidatar
 
-Para se candidatar, basta acessar a url de acordo com o nível e realizar o teste para a vaga:
+Para se candidatar, basta acessar a url e realizar o teste para a vaga:
 
-- [Desenvolvedor Frontend](teste-frontend.md)
+- [Teste para Desenvolvedor Frontend Jr.](teste-frontend.md)
