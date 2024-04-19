@@ -1,4 +1,4 @@
-interface Medication {
+export interface MedicationData {
   id: string;
   name: string;
   published_at: string;
@@ -19,6 +19,4 @@ interface ActivePrinciple {
   name: string;
 }
 
-export interface MedicationData {
-  data: Medication[];
-}
+
