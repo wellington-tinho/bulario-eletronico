@@ -7,7 +7,7 @@
 - [ ] Apresentar os resultados em uma listagem.
 - [ ] Adicionar ordenação pela data de publicação do medicamento.
 - [ ] Implementar paginação de 10 em 10 itens por página.
-- [ ] Ler o conteúdo por meio de uma API REST na pasta `api`.
+- [X] Ler o conteúdo por meio de uma API REST na pasta `api`.
 
 --- 
 
