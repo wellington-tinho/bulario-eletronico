@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // const URL = import.meta.env.VITE_API_URL; // example to use .env
-var URL = ''
+let URL = '';
 
 if (process.env.NODE_ENV !== 'production') {
   URL = 'http://localhost:3000/'
@@ -15,8 +15,6 @@ const api = axios.create({
   baseURL: URL,
   headers: {
     "Content-Type": "application/json",
-    "Access-Control-Allow-Origin": "*", // example to use cors
-    "Access-Control-Allow-Headers": "*", // example to use cors
   },
 });
 
