@@ -1,18 +1,38 @@
 import {useFetch} from "../../hooks/useFetch";
 import {MedicationData} from "../../shared/types/dotlib";
 import styles from "./styles.module.sass";
-import { useState } from 'react';
 import {handleDownload} from "../../shared/utils/handleDownload.ts";
 import { FontSizeChanger } from "../../components/FontSizeChanger/index.tsx";
 import { HandleThemeSwitcher } from "../../components/HandleThemeSwitcher/index.tsx";
 import { FormatDate } from "../../shared/utils/formatDate.ts";
+import { FilterMedication } from "../../components/FilterMedication/index.tsx";
+import { useSearchParams } from "react-router-dom";
 
 export default function Home() {
-  const [searchTerm, setSearchTerm] = useState('');
-  const {data, isError, isFetching, isLoading} = useFetch<MedicationData[]>('data'); // fetch data from API using react-query
+  const [searchParams] = useSearchParams();
+  const medicationTerm = searchParams.get('medication');
+  const companyTerm = searchParams.get('company');
 
+  const url = 'data'; // url to fetch the data
+  const keyToCache = `data-${medicationTerm}-${companyTerm}`; // key to cache the data
+  const {data, isError, isFetching, isLoading} = useFetch<MedicationData[]>(url,keyToCache); // fetch data from the api
   const dataSorted = data?.sort((a, b) => a.name.localeCompare(b.name)); // sort data by name
-  const dataSorted2 = dataSorted?.slice(0, 10); // get the first 10 items from the sorted data
+
+  const dataFiltered = dataSorted?.filter((medication) => {
+    const medicationLower = medication.name.toLowerCase();
+    const companyLower = medication.company.toLowerCase();
+
+     if (medicationTerm && companyTerm) {
+      return medicationLower.includes(medicationTerm.toLowerCase()) && companyLower.toLowerCase().includes(companyTerm.toLowerCase())
+    } else if (medicationTerm) {
+      return medicationLower.includes(medicationTerm.toLowerCase())
+    }
+    else if (companyTerm) {
+      return companyLower.toLowerCase().includes(companyTerm.toLowerCase())
+    }
+    return dataSorted;
+  })
+
 
   return (
     <div className={styles.Container}>
@@ -25,23 +45,7 @@ export default function Home() {
           <div className={styles.DrugFormulary}>
 
             <div className={styles.Header}>
-            
-              <search>
-                <form 
-                onSubmit={(e) => {
-                  e.preventDefault();
-                  
-                }}>
-                  <input
-                    type="search"
-                    name="search"
-                    placeholder="Digite aqui oque você procura"
-                    value={searchTerm}
-                    onChange={(e) => setSearchTerm(e.target.value)}
-                  />
-                  <button type="submit">Consultar</button>
-                </form>
-              </search>
+              <FilterMedication/>
 
               <div className={styles.Acsessibility}>
                 <FontSizeChanger/>
@@ -50,10 +54,10 @@ export default function Home() {
             </div>
 
             <div className={styles.TableContainer}>
-              {!!searchTerm ? (
+              {medicationTerm || companyTerm ? (
                 <h2>
                   Resultados obtidos: 
-                  <strong>{' '+dataSorted2?.length}</strong>
+                  <strong>{' '+dataFiltered?.length}</strong>
                 </h2>
               ) : (
                 <h2>
@@ -77,7 +81,7 @@ export default function Home() {
                     </thead>
                   <tbody>
 
-                  {dataSorted2?.map((medication) => (
+                  {dataFiltered?.map((medication) => (
                     <tr key={medication.id} className={styles.Item}>
                       <td>{medication.name}</td>{/*  Medicamento */}
                       <td>{medication.company}</td>{/*  Empresa - CNPJ */}
