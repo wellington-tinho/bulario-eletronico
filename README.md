@@ -3,11 +3,12 @@
 # Teste para candidatos à vaga de Desenvolvedor Frontend Jr.
 
 ### Checklists de funcionalidades
-- [ ] Implementar consulta por nome do medicamento ou laboratório farmacêutico.
-- [ ] Apresentar os resultados em uma listagem.
-- [ ] Adicionar ordenação pela data de publicação do medicamento.
-- [ ] Implementar paginação de 10 em 10 itens por página.
+- [x] Implementar consulta por nome do medicamento ou laboratório farmacêutico.
+- [x] Apresentar os resultados em uma listagem.
+- [x] Adicionar ordenação pela data de publicação do medicamento.
+- [x] Implementar paginação de 10 em 10 itens por página.
 - [X] Ler o conteúdo por meio de uma API REST na pasta `api`.
+
 
 --- 
 
