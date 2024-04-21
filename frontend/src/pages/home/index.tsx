@@ -1,5 +1,5 @@
 import {useFetch} from "../../hooks/useFetch";
-import {MedicationData} from "../../shared/types/dotlib";
+import { IMedicationData } from "../../shared/types/dotlib";
 import styles from "./styles.module.sass";
 import {handleDownload} from "../../shared/utils/handleDownload.ts";
 import { FontSizeChanger } from "../../components/FontSizeChanger/index.tsx";
@@ -7,6 +7,7 @@ import { HandleThemeSwitcher } from "../../components/HandleThemeSwitcher/index.
 import { FormatDate } from "../../shared/utils/formatDate.ts";
 import { FilterMedication } from "../../components/FilterMedication/index.tsx";
 import { useSearchParams } from "react-router-dom";
+import { PaginationTable } from "../../components/PaginationTable/index.tsx";
 
 export default function Home() {
   const [searchParams] = useSearchParams();
@@ -15,7 +16,7 @@ export default function Home() {
 
   const url = 'data'; // url to fetch the data
   const keyToCache = `data-${medicationTerm}-${companyTerm}`; // key to cache the data
-  const {data, isError, isFetching, isLoading} = useFetch<MedicationData[]>(url,keyToCache); // fetch data from the api
+  const {data, isError, isFetching, isLoading} = useFetch<IMedicationData[]>(url,keyToCache); // fetch data from the api
   const dataSorted = data?.sort((a, b) => a.name.localeCompare(b.name)); // sort data by name
 
   const dataFiltered = dataSorted?.filter((medication) => {
@@ -33,6 +34,10 @@ export default function Home() {
     return dataSorted;
   })
 
+  const pagination = 10; // number of items per page
+  const page = Number(searchParams.get('page')) || 0; // page number
+  const dataPaginated = dataFiltered?.slice(page * pagination, (page + 1) * pagination); // paginate the data
+  
 
   return (
     <div className={styles.Container}>
@@ -81,7 +86,7 @@ export default function Home() {
                     </thead>
                   <tbody>
 
-                  {dataFiltered?.map((medication) => (
+                  {dataPaginated?.map((medication) => (
                     <tr key={medication.id} className={styles.Item}>
                       <td>{medication.name}</td>{/*  Medicamento */}
                       <td>{medication.company}</td>{/*  Empresa - CNPJ */}
@@ -113,6 +118,7 @@ export default function Home() {
                   </tbody>
                 </table>
               </div>
+              <PaginationTable data={dataFiltered} pagination={pagination} page={page}/>
             </div>
           </div>
         )
