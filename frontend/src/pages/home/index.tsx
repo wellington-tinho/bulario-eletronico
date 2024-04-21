@@ -34,6 +34,7 @@ export default function Home() {
     return dataSorted;
   })
 
+  // TODO: create a pagination hook to handle the pagination logic
   const pagination = 10; // number of items per page
   const page = Number(searchParams.get('page')) || 0; // page number
   const dataPaginated = dataFiltered?.slice(page * pagination, (page + 1) * pagination); // paginate the data

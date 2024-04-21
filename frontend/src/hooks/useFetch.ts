@@ -1,7 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
 import api from "../services/api";
 
-export function useFetch<T = unknown>(url: string, keyToCache: string) {
+export function useFetch<T = unknown>(url: string, keyToCache?: string) {
+  keyToCache = keyToCache || url; 
   return useQuery<T>({
     queryKey: [keyToCache],
     queryFn: () => api.get(url).then((res) => res.data),
