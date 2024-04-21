@@ -103,7 +103,7 @@ export default function Home() {
                       <td className={styles.TableItemDoc}> {/*  Bula do Profissional */}
                         <a
                           href="#"
-                          onClick={() => handleDownload(medication.documents[1].url, `Bula-${medication.name}-Paciente.pdf`)}>
+                          onClick={() => handleDownload(medication.documents[1].url, `Bula-${medication.name}-Profissional.pdf`)}>
                           <img src="assets/images/pdf.png" alt="Icone de PDF"/>
                         </a>
                       </td>

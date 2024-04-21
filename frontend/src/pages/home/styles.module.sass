@@ -2,6 +2,13 @@
   height: 100dvh
   margin: 0 auto
   padding: 1rem 1.5rem
+  @media (width < 768px)
+    font-size: 0.75rem
+  h1
+    font-size: 1.75rem
+    color: var(--color-text)
+    @media (width < 768px)
+      font-size: 1.25rem
 
   .Loading,.Error,.Updating
     font-size: 1.5rem
@@ -21,7 +28,9 @@
   gap: 1rem
   align-items: center
   padding: 0 1rem .5rem
-
+  @media (width < 768px)
+    grid-template-columns: 1fr
+    padding: 0
 
 
 .TableContainer
@@ -87,3 +96,6 @@
   display: flex
   justify-content: flex-end
   gap: .25rem
+  @media (width < 768px)
+    margin-top: -4rem
+    
