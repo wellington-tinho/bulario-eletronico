@@ -28,9 +28,9 @@ https://bulario-eletronico-4o1o.vercel.app/
 - [x] Responsividade em dispositivos com telas pequenas / grandes
 
 OBS:
-Não foi usado em nenhum momento useEffect
-Inicialmente a aplicação ira recuperar a preferencia de tema claro/escuro do navegador do usuário 
-Obrigado pela oportunidade !!
+- Não foi usado em nenhum momento useEffect
+- Inicialmente a aplicação ira recuperar a preferencia de tema claro/escuro do navegador do usuário 
+
 
 
 
